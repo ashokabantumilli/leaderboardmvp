@@ -1,0 +1,50 @@
+﻿@model leaderboard.Models.LeaderBoardTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LeaderBoardTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompeteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompeteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.H2HContestName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H2HContestName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Referee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Referee)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

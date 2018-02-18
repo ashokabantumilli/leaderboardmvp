@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>LEADERBOARD MVP</h1>
+    <p class="lead">Leaderboard data will be submitted by authenticated users and Leaderboards can viewed by the public or by private invitation.</p>    
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Getting started</h2>
+        <p>
+            Referees are welcome to register if you dont have account.
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+        </p>
+        <p>
+            Referees are welcome to login if you already have an account.
+            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+        <p>
+            Subscribers are welcome to view leaderboard click here.
+            @Html.ActionLink("View Leaderboard", "Index", "LeaderBoardTables", routeValues: null, htmlAttributes: new { id = "viewLeaderBoardLink" })
+        </p>
+        <p>
+            Send Invitations to Subscribers to view leaderboard click here.
+            @Html.ActionLink("Send Invitations", "Index", "SendInvitations", routeValues: null, htmlAttributes: new { id = "viewLeaderBoardLink" })
+        </p>
+    </div>
+</div>

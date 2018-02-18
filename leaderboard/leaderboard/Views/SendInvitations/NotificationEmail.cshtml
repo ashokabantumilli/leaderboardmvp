@@ -1,0 +1,11 @@
+﻿@model leaderboard.Models.SendInvitation
+
+@{
+    ViewBag.Title = "NotificationEmail";
+}
+
+<h2>Notification Email</h2>
+
+<h4>
+    Hello Please click this link : <a href="@(Url.Action("Register", "AccountController") + "?id=" + Model.GuidId)">Please Click</a>
+</h4>

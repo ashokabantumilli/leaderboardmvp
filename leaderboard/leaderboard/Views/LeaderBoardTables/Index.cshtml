@@ -1,0 +1,111 @@
+﻿@model IEnumerable<leaderboard.Models.LeaderBoardTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LeaderBoard</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompeteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.H2HContestName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Referee)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompeteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.H2HContestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Referee)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+    <p>
+        Leader Board Competitor MVP Details
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            Leader Board MVP Most
+        </th>
+        <th>
+            Win Points
+        </th>
+        <th>
+            Leader Board MVP Drawn
+        </th>
+        <th>
+            Draw Points
+        </th>
+        <th>
+            Leader Board MVP Less
+        </th>
+        <th>
+            Loss Points
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            @if(ViewData["Win Competitor"] != null) {
+                @ViewData["Win Competitor"].ToString();
+            }
+        </td>
+        <td>
+            @if(ViewData["Win Points"] != null) {
+                @ViewData["Win Points"].ToString();
+            }
+        </td>
+        <td>
+            @if(ViewData["Draw Competitor"] != null) {
+                @ViewData["Draw Competitor"].ToString();
+            }
+        </td>
+        <td>
+            @if(ViewData["Draw Points"] != null) {
+                @ViewData["Draw Points"].ToString();
+            }
+        </td>
+        <td>
+            @if(ViewData["Loss Competitor"] != null) {
+                @ViewData["Loss Competitor"].ToString();
+            }
+        </td>
+        <td>
+            @if(ViewData["Loss Points"] != null) {
+                @ViewData["Loss Points"].ToString();
+            }
+        </td>
+    </tr>
+
+</table>
